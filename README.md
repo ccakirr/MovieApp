@@ -1,75 +1,53 @@
-# React + TypeScript + Vite
+🎬 MovieBrowser
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieBrowser is a modern React + TypeScript web app built with Vite and Bootstrap 5, allowing users to explore popular and trending movies via the TMDB API.
+It supports dark/light mode, search functionality, and a responsive UI with clean, modular architecture.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔍 Real-time movie search using TMDB API
 
-## React Compiler
+🎬 Displays top 10 popular movies dynamically
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+🌙 Dark / ☀️ Light mode toggle with global state
 
-Note: This will impact Vite dev & build performances.
+⚡ Built with React, TypeScript, and Vite
 
-## Expanding the ESLint configuration
+📱 Fully responsive UI powered by Bootstrap 5
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🛠️ Technologies
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+React + TypeScript
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Vite
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bootstrap 5 (with SCSS customization)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TMDB API
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+⚙️ Setup & Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Clone the repository:
+
+git clone https://github.com/ccakirr/MovieApp.git
+cd MovieBrowser
+
+
+Install dependencies:
+
+npm install
+
+
+Create a .env file in the root directory and add your TMDB API key:
+
+VITE_TMDB_API_KEY=your_api_key_here
+
+
+Start the development server:
+
+npm run dev
+
+🌐 API
+
+All movie data is fetched from The Movie Database (TMDB)
+.
