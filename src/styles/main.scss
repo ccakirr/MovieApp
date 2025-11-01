@@ -1,0 +1,14 @@
+$danger: #ff4747;
+$primary: #00c896;
+$warning: #cfad14;
+
+@import "bootstrap/scss/bootstrap";
+
+.navbar {
+  height: 5em;
+}
+
+.nav-link:hover {
+  color: rgb(35, 7, 66) !important;
+}
+
