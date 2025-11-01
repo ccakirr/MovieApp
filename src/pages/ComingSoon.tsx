@@ -23,7 +23,7 @@ function ComingSoon({ theme, setTheme }: ComingSoonProps) {
   }, []);
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme}></Navbar>;
+      <Navbar theme={theme} setTheme={setTheme}/>
       <Hero text="Coming Soon" />
       <div className="container mt-4">
         <div className="row row-cols-1 row-cols-md-5 gap-5">
