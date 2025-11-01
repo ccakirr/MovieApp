@@ -4,13 +4,14 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import { useSearchParams } from "react-router-dom";
 import Card from "../components/Cards";
+import Footer from "../components/Footer";
 
-interface SearchProps{
-  theme: string
-  setTheme: React.Dispatch<React.SetStateAction<string>>
+interface SearchProps {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Search({theme, setTheme}: SearchProps) {
+function Search({ theme, setTheme }: SearchProps) {
   const [params] = useSearchParams();
   const query = params.get("query");
   const api = new ApiReq(import.meta.env.VITE_TMDB_API_KEY);
@@ -27,7 +28,7 @@ function Search({theme, setTheme}: SearchProps) {
   }, [query]);
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme}/>
+      <Navbar theme={theme} setTheme={setTheme} />
       <Hero text="Search results for " searchItem={query || "nothing"} />
       <div className="container mt-4 d-flex flex-wrap justify-content-center gap-4">
         {film.map((item) => (
@@ -39,6 +40,7 @@ function Search({theme, setTheme}: SearchProps) {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 }

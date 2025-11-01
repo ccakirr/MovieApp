@@ -1,38 +1,38 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import ApiReq from "../apps/ApiRequests";
-import Card from "../components/Cards";
 import { useEffect, useState } from "react";
+import ApiReq from "../apps/ApiRequests";
+import Navbar from "../components/Navbar";
+import Card from "../components/Cards";
+import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 
-interface HomeProps {
+interface ComingSoonProps {
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function Home({ theme, setTheme }: HomeProps) {
+function ComingSoon({ theme, setTheme }: ComingSoonProps) {
   const api = new ApiReq(import.meta.env.VITE_TMDB_API_KEY);
   const [films, setFilms] = useState<any[]>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await api.getTenPopularFilm();
+      const data = await api.getTenUpcomingFilms();
       setFilms(data);
     }
     fetchData();
   }, []);
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Hero text="Welcome To Movie Browser!" />
+      <Navbar theme={theme} setTheme={setTheme}></Navbar>;
+      <Hero text="Coming Soon" />
       <div className="container mt-4">
         <div className="row row-cols-1 row-cols-md-5 gap-5">
           {films.map((film) => (
             <div className="col" key={film.id}>
               <Card
-                imgLink={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
                 cardTitle={film.original_title}
                 cardText={film.overview}
+                imgLink={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
               />
             </div>
           ))}
@@ -42,4 +42,5 @@ function Home({ theme, setTheme }: HomeProps) {
     </>
   );
 }
-export default Home;
+
+export default ComingSoon;

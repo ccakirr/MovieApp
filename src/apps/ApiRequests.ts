@@ -33,6 +33,20 @@ class ApiReq{
 			return []
 		}
 	}
+	
+	async getTenUpcomingFilms(){
+		try {
+			const response = await fetch(`${this.baseURL}/movie/upcoming?api_key=${this.key}`);
+			if(!response.ok){
+				throw new Error(`HTTP Error: ${response.status}`)
+			}
+			const data = await response.json()
+			return data.results
+		} catch (error) {
+			console.error("Film verisi alınamadı", error)
+			return []
+		}
+	}
 }
 
 export default ApiReq

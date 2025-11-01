@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -37,18 +36,18 @@ function Navbar({theme, setTheme}: NavbarProps ) {
                 <Link
                   className="nav-link fs-5 active"
                   aria-current="page"
-                  to="#"
+                  to="/"
                 >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fs-5" to="/">
+                <Link className="nav-link fs-5" to="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fs-5" to="/">
+                <Link className="nav-link fs-5" to="/coming-soon">
                   Coming Soon
                 </Link>
               </li>
@@ -70,7 +69,7 @@ function Navbar({theme, setTheme}: NavbarProps ) {
             </form>
             <button
               type="button"
-              className={`btn btn-outline-${theme} ms-auto`}
+              className={`btn btn-outline-${theme === "light" ? "dark": "light"} ms-auto`}
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >
               {theme === "light" ? "🌙" : "☀️"}
